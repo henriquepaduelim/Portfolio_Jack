@@ -27,13 +27,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap');
 
 :root {
-    --color-primary: #CA3C25;
-    --color-text: #1D1A05;
-    --color-background: #fdfdfd;
-    --color-background-alt: #f7f7f7;
-    --color-border: #e5e5e5;
+    --color-primary: #ffbd00;
+    --color-text: #e9e1ec;
+    --color-background: #390099;
+    --color-background-alt: #9e0059;
+    --color-border: #ff0054;
     --color-shadow: rgba(29, 26, 5, 0.06);
-    --color-light-text: #fdfdfd;
+    --color-light-text: #000000;
 
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
@@ -225,12 +225,36 @@ main {
 .button {
     display: inline-block;
     background-color: var(--color-primary);
-    color: #fff;
+    color: #000;
     padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1.5);
     border-radius: var(--border-radius);
     font-weight: 500;
     border: 2px solid var(--color-primary);
     text-decoration: none;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+.button::before,
+.button::after {
+    content: "";
+    position: absolute;
+    width: 9em;
+    aspect-ratio: 1;
+    background: var(--color-primary);
+    opacity: 0.25;
+    border-radius: 50%;
+    mix-blend-mode: screen; /* Lighten against the button fill */
+    transition: transform 500ms ease, background 300ms ease, opacity 300ms ease;
+    z-index: -1;
+}
+.button::before {
+    left: 0;
+    transform: translateX(-8em);
+}
+.button::after {
+    right: 0;
+    transform: translateX(8em);
 }
 
 .project-grid {
@@ -240,7 +264,7 @@ main {
 }
 
 .project-card {
-    background-color: #fff;
+    background-color: #6e5e97;
     border-radius: var(--border-radius);
     border: 1px solid var(--color-border);
     box-shadow: 0 2px 5px var(--color-shadow);
@@ -260,7 +284,7 @@ main {
 }
 .project-card-content .technologies {
     font-size: 0.8rem;
-    color: #555;
+    color: #373737;
     margin-bottom: var(--spacing-unit);
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -393,10 +417,21 @@ main {
 #site-footer {
     background-color: var(--color-text);
     color: var(--color-light-text);
-    padding: calc(var(--spacing-unit) * 3) 0;
+    padding: calc(var(--spacing-unit)) 0;
+    align-items: center;
     text-align: center;
-    margin-top: calc(var(--spacing-unit) * 4);
+    margin-top: calc(var(--spacing-unit));
 }
+
+#site-footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+
+}
+
 #site-footer a {
     color: var(--color-light-text);
     opacity: 0.8;
@@ -448,14 +483,11 @@ main {
     #primary-navigation a:focus-visible::after {
         transform: scaleX(1);
     }
-    
-    .button:hover, .button:focus-visible {
-        background-color: transparent;
-        color: var(--color-primary);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 10px var(--color-shadow);
+    .button:hover,
+    .button:focus-visible {
+        background-color: #f49cbb;
+        color: #212121;
     }
-    
     .project-card:hover, .project-card:focus-within {
         transform: translateY(-4px);
         box-shadow: 0 8px 20px var(--color-shadow);
