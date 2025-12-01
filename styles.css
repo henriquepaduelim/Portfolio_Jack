@@ -1,0 +1,530 @@
+/*
+*   Jack Scoular Portfolio
+*   Author: Gemini
+*   Version: 1.1
+*
+*   --- TABLE OF CONTENTS ---
+*   1.  Design Tokens (:root)
+*   2.  Base & Reset
+*   3.  Typography & Links
+*   4.  Layout & Containers
+*   5.  Header & Navigation
+*   6.  Components
+*       - Buttons
+*       - Project Cards
+*       - Image Placeholders
+*       - Forms
+*   7.  Page-Specific Sections
+*   8.  Footer
+*   9.  Animations & Accessibility
+*   10. Responsive Media Queries
+*/
+
+/* 
+ * 1. DESIGN TOKENS 
+ * =============================================== 
+ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap');
+
+:root {
+    --color-primary: #CA3C25;
+    --color-text: #1D1A05;
+    --color-background: #fdfdfd;
+    --color-background-alt: #f7f7f7;
+    --color-border: #e5e5e5;
+    --color-shadow: rgba(29, 26, 5, 0.06);
+    --color-light-text: #fdfdfd;
+
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    --container-width: 1150px;
+    --spacing-unit: 1rem;
+    --border-radius: 6px;
+    --transition-speed: 200ms;
+}
+
+/* 
+ * 2. BASE & RESET
+ * =============================================== 
+ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.65;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 
+ * 3. TYPOGRAPHY & LINKS
+ * =============================================== 
+ */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--color-text);
+    margin-bottom: calc(var(--spacing-unit) * 1.25);
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 3.25rem); }
+h2 { font-size: clamp(2rem, 4vw, 2.5rem); }
+h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+h4 { font-size: 1.1rem; }
+
+p {
+    margin-bottom: var(--spacing-unit);
+    max-width: 65ch;
+}
+
+main ul,
+main ol {
+    padding-left: calc(var(--spacing-unit) * 1.25);
+    margin-bottom: var(--spacing-unit);
+}
+
+main li + li {
+    margin-top: 0.35rem;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+/* 
+ * 4. LAYOUT & CONTAINERS
+ * =============================================== 
+ */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 calc(var(--spacing-unit) * 1.5);
+}
+
+main {
+    padding-top: calc(var(--spacing-unit) * 3);
+}
+
+.section {
+    padding: calc(var(--spacing-unit) * 3) 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+/* 
+ * 5. HEADER & NAVIGATION
+ * =============================================== 
+ */
+#site-header {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-text);
+    color: var(--color-light-text);
+    padding: calc(var(--spacing-unit) * 1.25) 0;
+    z-index: 1000;
+}
+
+#site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand a {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-light-text);
+    text-decoration: none;
+}
+
+#primary-navigation ul {
+    list-style: none;
+    display: flex;
+    gap: calc(var(--spacing-unit) * 2);
+}
+
+#primary-navigation a {
+    color: var(--color-light-text);
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding-bottom: 4px;
+    position: relative;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+#primary-navigation a.active,
+#primary-navigation a:hover {
+    opacity: 1;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-light-text);
+    z-index: 1001;
+}
+
+.mobile-nav-overlay {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-text);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 999;
+}
+.mobile-nav-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+.mobile-nav-overlay ul {
+    list-style: none;
+    text-align: center;
+}
+.mobile-nav-overlay li {
+    margin: var(--spacing-unit) 0;
+}
+.mobile-nav-overlay a {
+    color: var(--color-background);
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-family: var(--font-heading);
+    text-decoration: none;
+}
+
+/* 
+ * 6. COMPONENTS
+ * =============================================== 
+ */
+.button {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1.5);
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    border: 2px solid var(--color-primary);
+    text-decoration: none;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: calc(var(--spacing-unit) * 2);
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 2px 5px var(--color-shadow);
+    overflow: hidden;
+}
+
+.project-card-content {
+    padding: calc(var(--spacing-unit) * 1.25);
+}
+.project-card-content h3 {
+    margin-bottom: calc(var(--spacing-unit) * 0.5);
+    font-size: 1.4rem;
+}
+.project-card-content p {
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-unit);
+}
+.project-card-content .technologies {
+    font-size: 0.8rem;
+    color: #555;
+    margin-bottom: var(--spacing-unit);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.image-placeholder {
+    width: 100%;
+    min-height: 220px;
+    background-color: var(--color-background-alt);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ccc;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: var(--spacing-unit);
+    margin-bottom: var(--spacing-unit);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+/* 
+ * 7. PAGE-SPECIFIC SECTIONS
+ * =============================================== 
+ */
+.hero-section {
+    text-align: center;
+    padding: calc(var(--spacing-unit) * 4) 0;
+}
+.hero-section h1 {
+    max-width: 20ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hero-section .subtitle {
+    font-size: 1.1rem;
+    max-width: 45ch;
+    margin: 0 auto calc(var(--spacing-unit) * 2) auto;
+}
+
+.about-content {
+    display: flex;
+    gap: calc(var(--spacing-unit) * 3);
+    align-items: flex-start;
+}
+.about-profile-image {
+    flex: 0 0 200px;
+    height: 200px;
+}
+.about-text {
+    flex: 1;
+}
+
+.project-hero-image {
+    min-height: 400px;
+    margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.map-and-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: calc(var(--spacing-unit) * 3);
+    align-items: center;
+}
+.map-placeholder {
+    width: 100%;
+    min-height: 400px; /* Fallback height for when iframe is not present or has no intrinsic height */
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    flex-direction: column; /* Keep content centered if no iframe */
+    overflow: hidden; /* Ensure iframe content does not break out */
+    position: relative; /* For absolute positioning of iframe */
+    display: flex; /* Ensure display flex for centering fallback content */
+    justify-content: center;
+    align-items: center;
+}
+.map-placeholder .map-fallback {
+    text-align: center;
+    padding: calc(var(--spacing-unit) * 1.25);
+    color: #777;
+}
+.map-placeholder .map-fallback strong {
+    display: block;
+    color: var(--color-text);
+    margin-bottom: 0.35rem;
+}
+.map-placeholder span {
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+.map-placeholder iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.collaboration-info h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+}
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted minmax for better layout */
+    gap: calc(var(--spacing-unit) * 2);
+    margin-top: calc(var(--spacing-unit) * 4);
+}
+
+.skill-category {
+    text-align: left; /* Explicitly set for consistent left alignment */
+}
+
+/* 
+ * 8. FOOTER
+ * =============================================== 
+ */
+#site-footer {
+    background-color: var(--color-text);
+    color: var(--color-light-text);
+    padding: calc(var(--spacing-unit) * 3) 0;
+    text-align: center;
+    margin-top: calc(var(--spacing-unit) * 4);
+}
+#site-footer a {
+    color: var(--color-light-text);
+    opacity: 0.8;
+}
+#site-footer a:hover {
+    opacity: 1;
+}
+#site-footer .social-links {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-unit) 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: calc(var(--spacing-unit) * 1.5);
+}
+#site-footer .social-links a {
+    font-size: 1.4rem;
+}
+
+/* 
+ * 9. ANIMATIONS & ACCESSIBILITY
+ * =============================================== 
+ */
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    text-decoration: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    a, .button, .project-card, .contact-form input, .contact-form textarea, #site-footer a {
+        transition: all var(--transition-speed) ease-out;
+    }
+
+    #primary-navigation a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: var(--color-primary);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform var(--transition-speed) ease-out;
+    }
+    #primary-navigation a.active::after,
+    #primary-navigation a:hover::after,
+    #primary-navigation a:focus-visible::after {
+        transform: scaleX(1);
+    }
+    
+    .button:hover, .button:focus-visible {
+        background-color: transparent;
+        color: var(--color-primary);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px var(--color-shadow);
+    }
+    
+    .project-card:hover, .project-card:focus-within {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px var(--color-shadow);
+        border-color: #888;
+    }
+    
+    .contact-form input:focus, .contact-form textarea:focus {
+        outline: none;
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 3px rgba(202, 60, 37, 0.2);
+    }
+
+    .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 500ms ease-out, transform 500ms ease-out;
+    }
+    
+    .reveal-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* 
+ * 10. RESPONSIVE MEDIA QUERIES
+ * =============================================== 
+ */
+@media (max-width: 768px) {
+    #primary-navigation {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .about-content,
+    .map-and-info-grid {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        grid-template-columns: 1fr;
+    }
+    .about-profile-image {
+        margin-bottom: var(--spacing-unit);
+    }
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .project-details-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-unit);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-unit);
+    }
+    .section,
+    .hero-section {
+        padding: calc(var(--spacing-unit) * 2) 0;
+    }
+    .project-grid, .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
