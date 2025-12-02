@@ -911,6 +911,9 @@ main {
  */
 /* Tablet and smaller devices */
 @media (max-width: 992px) {
+    .timeline {
+        --timeline-axis: var(--spacing-lg);
+    }
     .container {
         padding: 0 var(--spacing-md);
     }
@@ -950,12 +953,12 @@ main {
         padding: var(--spacing-sm) 0;
     }
     .timeline::before {
-        left: var(--spacing-lg); /* Position vertical line to the left */
+        left: var(--timeline-axis); /* Position vertical line to the left */
         margin-left: 0;
     }
     .timeline-item {
         width: 100%;
-        padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm) var(--spacing-xxl); /* Adjust padding for bullet point and text */
+        padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm) calc(var(--timeline-axis) + var(--spacing-lg)); /* Adjust padding for bullet point and text */
         text-align: left; /* Ensure left alignment */
         position: relative; /* Ensure ::before is positioned relative to this */
     }
@@ -965,9 +968,14 @@ main {
         padding-right: var(--spacing-sm); /* Keep right padding consistent */
     }
     .timeline-item::before {
-        left: var(--spacing-lg); /* Align bullet with vertical line */
+        left: var(--timeline-axis); /* Align bullet with vertical line */
         top: 1.2rem; /* A fixed value to align with the first line of text */
-        transform: translateY(0); /* Remove vertical translation */
+        transform: translate(-50%, 0); /* Center bullet on the line */
+    }
+    .timeline-item:nth-child(odd)::before,
+    .timeline-item:nth-child(even)::before {
+        left: var(--timeline-axis);
+        right: auto;
     }
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1012,16 +1020,25 @@ main {
     .skills-grid {
         grid-template-columns: 1fr; /* Single column on mobile */
     }
+    .timeline {
+        --timeline-axis: var(--spacing-md);
+    }
     .timeline::before {
-        left: var(--spacing-md); /* Consistent with timeline-item::before for very small screens */
+        left: var(--timeline-axis);
+        top: var(--spacing-sm);
+        bottom: var(--spacing-sm);
+        margin-left: 0;
     }
     .timeline-item {
-        padding-left: var(--spacing-xl); /* Adjust padding to make space for bullet */
-        padding-right: var(--spacing-sm);
+        width: 100%;
+        left: 0;
+        text-align: left;
+        padding: var(--spacing-md) var(--spacing-sm) var(--spacing-md) calc(var(--timeline-axis) + var(--spacing-lg));
     }
     .timeline-item::before {
-        left: var(--spacing-md); /* Align bullet with vertical line */
-        top: 1rem; /* Adjust top for smaller text content */
+        left: var(--timeline-axis);
+        top: var(--spacing-sm);
+        transform: translate(-50%, 0);
     }
     .project-hero-image {
         min-height: 300px;
@@ -1055,4 +1072,3 @@ main {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
