@@ -1047,3 +1047,9 @@ main {
     }
 }
 
+@media (min-width: 768px) {
+  .featured-project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
