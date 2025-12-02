@@ -950,12 +950,12 @@ main {
         padding: var(--spacing-sm) 0;
     }
     .timeline::before {
-        left: var(--spacing-md); /* Position vertical line to the left */
+        left: var(--spacing-lg); /* Position vertical line to the left */
         margin-left: 0;
     }
     .timeline-item {
         width: 100%;
-        padding: var(--spacing-md) var(--spacing-sm) var(--spacing-md) var(--spacing-xxl); /* Adjust padding for bullet point */
+        padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm) var(--spacing-xxl); /* Adjust padding for bullet point and text */
         text-align: left; /* Ensure left alignment */
     }
     .timeline-item:nth-child(odd),
@@ -964,8 +964,9 @@ main {
         padding-right: var(--spacing-sm); /* Keep right padding consistent */
     }
     .timeline-item::before {
-        left: var(--spacing-md); /* Align bullet with vertical line */
-        transform: translateY(-50%) translateX(-50%); /* Center bullet vertically on the line */
+        left: var(--spacing-lg); /* Align bullet with vertical line */
+        transform: translateY(-50%); /* Only translate Y, as left handles X positioning */
+        top: var(--spacing-xl); /* Fix vertical position relative to item start */
     }
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1011,14 +1012,15 @@ main {
         grid-template-columns: 1fr; /* Single column on mobile */
     }
     .timeline::before {
-        left: var(--spacing-sm); /* Even further left for very small screens */
+        left: var(--spacing-md); /* Consistent with timeline-item::before for very small screens */
     }
     .timeline-item {
-        padding-left: var(--spacing-xl); /* Adjust padding for very small screens */
+        padding-left: var(--spacing-xxl); /* Adjust padding to make space for bullet */
         padding-right: var(--spacing-sm);
     }
     .timeline-item::before {
-        left: var(--spacing-sm); /* Align bullet with vertical line */
+        left: var(--spacing-md); /* Align bullet with vertical line */
+        top: var(--spacing-lg); /* Adjust top for smaller text content */
     }
     .project-hero-image {
         min-height: 300px;
