@@ -301,11 +301,24 @@ main {
     box-shadow: var(--box-shadow-md);
     overflow: hidden;
     transition: transform var(--transition-speed) ease-out, box-shadow var(--transition-speed) ease-out;
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Push content up, button down */
+    padding-bottom: var(--spacing-lg); /* Add space for the button */
 }
 
 .project-card-content {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-lg) var(--spacing-lg) 0 var(--spacing-lg); /* Remove bottom padding here */
+    flex-grow: 1; /* Allow content to grow and push button down */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
+.project-card-content .project-details {
+    padding-bottom: var(--spacing-sm); /* Padding below the text content */
+}
+
 .project-card-content h3 {
     margin-bottom: var(--spacing-xs);
     font-size: var(--font-size-xl);
@@ -324,6 +337,15 @@ main {
     letter-spacing: 0.5px;
     font-weight: 500;
 }
+
+.project-card > .button {
+    align-self: center; /* Center horizontally */
+    margin-top: auto; /* Push to the bottom */
+    margin-bottom: var(--spacing-lg); /* Space from the bottom of the card */
+}
+
+
+
 
 .image-placeholder {
     width: 100%;
