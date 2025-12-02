@@ -957,6 +957,7 @@ main {
         width: 100%;
         padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm) var(--spacing-xxl); /* Adjust padding for bullet point and text */
         text-align: left; /* Ensure left alignment */
+        position: relative; /* Ensure ::before is positioned relative to this */
     }
     .timeline-item:nth-child(odd),
     .timeline-item:nth-child(even) {
@@ -965,8 +966,8 @@ main {
     }
     .timeline-item::before {
         left: var(--spacing-lg); /* Align bullet with vertical line */
-        transform: translateY(-50%); /* Only translate Y, as left handles X positioning */
-        top: var(--spacing-xl); /* Fix vertical position relative to item start */
+        top: 1.2rem; /* A fixed value to align with the first line of text */
+        transform: translateY(0); /* Remove vertical translation */
     }
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1015,12 +1016,12 @@ main {
         left: var(--spacing-md); /* Consistent with timeline-item::before for very small screens */
     }
     .timeline-item {
-        padding-left: var(--spacing-xxl); /* Adjust padding to make space for bullet */
+        padding-left: var(--spacing-xl); /* Adjust padding to make space for bullet */
         padding-right: var(--spacing-sm);
     }
     .timeline-item::before {
         left: var(--spacing-md); /* Align bullet with vertical line */
-        top: var(--spacing-lg); /* Adjust top for smaller text content */
+        top: 1rem; /* Adjust top for smaller text content */
     }
     .project-hero-image {
         min-height: 300px;
