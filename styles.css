@@ -944,28 +944,28 @@ main {
     .collaboration-info h2, .collaboration-info h3 {
         text-align: center;
     }
+    .timeline {
+        max-width: unset; /* Allow to take full width */
+        margin: var(--spacing-xl) var(--spacing-md); /* Adjust margin for smaller screens */
+        padding: var(--spacing-sm) 0;
+    }
     .timeline::before {
-        left: 50%;
+        left: var(--spacing-md); /* Position vertical line to the left */
+        margin-left: 0;
     }
     .timeline-item {
         width: 100%;
-        padding: var(--spacing-md) 0;
-        text-align: left !important; /* Override odd/even alignment */
+        padding: var(--spacing-md) var(--spacing-sm) var(--spacing-md) var(--spacing-xxl); /* Adjust padding for bullet point */
+        text-align: left; /* Ensure left alignment */
     }
     .timeline-item:nth-child(odd),
     .timeline-item:nth-child(even) {
         left: 0;
-        padding-left: var(--spacing-lg); /* Space for bullet point */
-        padding-right: var(--spacing-sm);
+        padding-right: var(--spacing-sm); /* Keep right padding consistent */
     }
     .timeline-item::before {
-        left: 0;
-        transform: translateY(-50%) translateX(-50%);
-    }
-    .timeline-item:nth-child(odd)::before,
-    .timeline-item:nth-child(even)::before {
-        left: 0;
-        transform: translateY(-50%) translateX(-50%);
+        left: var(--spacing-md); /* Align bullet with vertical line */
+        transform: translateY(-50%) translateX(-50%); /* Center bullet vertically on the line */
     }
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1011,14 +1011,14 @@ main {
         grid-template-columns: 1fr; /* Single column on mobile */
     }
     .timeline::before {
-        left: var(--spacing-lg);
+        left: var(--spacing-sm); /* Even further left for very small screens */
     }
     .timeline-item {
-        padding-left: var(--spacing-xxl);
+        padding-left: var(--spacing-xl); /* Adjust padding for very small screens */
         padding-right: var(--spacing-sm);
     }
     .timeline-item::before {
-        left: var(--spacing-lg);
+        left: var(--spacing-sm); /* Align bullet with vertical line */
     }
     .project-hero-image {
         min-height: 300px;
