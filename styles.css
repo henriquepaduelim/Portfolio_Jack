@@ -297,6 +297,9 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-xl);
 }
+.featured-projects-section .project-grid {
+    padding: 0 var(--spacing-md);
+}
 
 .project-card {
     background-color: var(--color-card-background);
@@ -319,10 +322,10 @@ main {
     opacity: 0;
     transition: opacity var(--transition-speed) ease-out;
     pointer-events: none;
-}
+}   
 .project-card::before {
-    content: '\f06e'; /* eye icon */
-    font-family: "Font Awesome 5 Free";
+    /* content: '\f06e'; /* eye icon */
+    /* font-family: "Font Awesome 5 Free"; */
     font-weight: 900;
     position: absolute;
     inset: 0;
@@ -336,14 +339,10 @@ main {
     text-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     pointer-events: none;
 }
-/*
 .project-card-content {
-    padding: var(--spacing-lg) var(--spacing-lg) 0 var(--spacing-lg); 
-    flex-grow: 1; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-} */
+  padding: 0 var(--spacing-lg) var(--spacing-lg);
+}
+
 
 .project-chip {
     display: inline-flex;
@@ -1271,6 +1270,12 @@ main {
     .project-grid {
         grid-template-columns: 1fr; /* Single column on mobile */
     }
+   
+    .featured-projects-section .container {
+  padding-left: calc(var(--spacing-lg) + var(--spacing-sm));
+  padding-right: calc(var(--spacing-lg) + var(--spacing-sm));
+    }
+
     .about-profile-image {
         flex: 0 0 235px;
         height: 235px;
