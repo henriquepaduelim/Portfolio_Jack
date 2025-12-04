@@ -309,6 +309,32 @@ main {
     flex-direction: column; /* Stack children vertically */
     justify-content: space-between; /* Push content up, button down */
     padding-bottom: var(--spacing-lg); /* Add space for the button */
+    position: relative;
+}
+.project-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 189, 0, 0.14), rgba(0, 0, 0, 0.25));
+    opacity: 0;
+    transition: opacity var(--transition-speed) ease-out;
+    pointer-events: none;
+}
+.project-card::before {
+    content: '\f06e'; /* eye icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-heading);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity var(--transition-speed) ease-out, transform var(--transition-speed) ease-out;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
 }
 
 .project-card-content {
@@ -317,6 +343,20 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.project-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 999px;
+    background: rgba(255, 189, 0, 0.12);
+    color: var(--color-heading);
+    border: 1px solid rgba(255, 189, 0, 0.35);
+    font-size: var(--font-size-sm);
+    letter-spacing: 0.01em;
+    margin-bottom: var(--spacing-sm);
 }
 
 .project-card-content .project-details {
@@ -389,6 +429,21 @@ main {
 .project-card:hover .project-image {
     transform: scale(1.03); /* Slightly less aggressive zoom */
 }
+.project-card:hover,
+.project-card:focus-within {
+    transform: translateY(-8px); /* More pronounced lift */
+    box-shadow: var(--box-shadow-lg), var(--glow-primary);
+    border-color: rgba(255, 189, 0, 0.6); /* Highlight border */
+}
+.project-card:hover::after,
+.project-card:focus-within::after {
+    opacity: 0.12;
+}
+.project-card:hover::before,
+.project-card:focus-within::before {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 .contact-form {
     max-width: 600px;
@@ -419,11 +474,32 @@ main {
 .contact-form input:focus, .contact-form textarea:focus {
     outline: none;
     border-color: var(--color-primary-light);
-    box-shadow: 0 0 0 3px rgba(var(--color-primary-light), 0.2);
+    box-shadow: 0 0 0 3px rgba(255, 189, 0, 0.25);
+    background-color: rgba(255, 189, 0, 0.04);
 }
 .contact-form button.button {
     width: auto;
     margin-top: var(--spacing-sm);
+}
+.contact-form .form-status {
+    margin-top: var(--spacing-sm);
+    min-height: 1.5em;
+    font-size: var(--font-size-sm);
+    color: var(--color-body-text);
+}
+.contact-form .form-status.success {
+    color: var(--color-heading);
+}
+.contact-form .form-status.error {
+    color: var(--color-accent);
+}
+.contact-form .input-success {
+    border-color: var(--color-primary-light);
+    box-shadow: 0 0 0 2px rgba(255, 189, 0, 0.25);
+}
+.contact-form .input-error {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(255, 0, 84, 0.25);
 }
 
 /* 
@@ -1030,7 +1106,7 @@ main {
     .contact-form input:focus, .contact-form textarea:focus {
         outline: none;
         border-color: var(--color-primary-light);
-        box-shadow: 0 0 0 3px rgba(var(--color-primary-light), 0.3);
+        box-shadow: 0 0 0 3px rgba(255, 189, 0, 0.3);
     }
 
     .reveal-on-scroll {
