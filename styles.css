@@ -1150,13 +1150,13 @@ main {
         padding-right: var(--spacing-sm); /* Keep right padding consistent */
     }
     .timeline-item::before {
-        left: var(--timeline-axis); /* Align bullet with vertical line */
+        left: calc(var(--timeline-axis) + 1px); /* Nudge to center on the 2px line */
         top: 1.2rem; /* A fixed value to align with the first line of text */
         transform: translate(-50%, -50%); /* Center bullet on the line */
     }
     .timeline-item:nth-child(odd)::before,
     .timeline-item:nth-child(even)::before {
-        left: var(--timeline-axis);
+        left: calc(var(--timeline-axis) + 1px);
         right: auto;
     }
     .skills-grid {
@@ -1218,9 +1218,9 @@ main {
         padding: var(--spacing-md) var(--spacing-sm) var(--spacing-md) calc(var(--timeline-axis) + var(--spacing-lg));
     }
     .timeline-item::before {
-        left: var(--timeline-axis);
+        left: calc(var(--timeline-axis) + 1px);
         top: var(--spacing-sm);
-        transform: translate(-50%, 0);
+        transform: translate(-50%, -50%);
     }
     .project-hero-image {
         min-height: 300px;
