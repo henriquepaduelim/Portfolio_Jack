@@ -336,14 +336,14 @@ main {
     text-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     pointer-events: none;
 }
-
+/*
 .project-card-content {
-    padding: var(--spacing-lg) var(--spacing-lg) 0 var(--spacing-lg); /* Remove bottom padding here */
-    flex-grow: 1; /* Allow content to grow and push button down */
+    padding: var(--spacing-lg) var(--spacing-lg) 0 var(--spacing-lg); 
+    flex-grow: 1; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
+} */
 
 .project-chip {
     display: inline-flex;
