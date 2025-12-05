@@ -369,6 +369,10 @@ main {
 .featured-projects-section .project-grid {
     padding: 0 var(--spacing-md);
 }
+.featured-projects-section .project-card {
+    justify-content: flex-start;
+    gap: var(--spacing-xs);
+}
 
 .project-card {
     background-color: var(--color-card-background);
@@ -417,6 +421,9 @@ main {
   gap: var(--spacing-sm);
 }
 .featured-projects-section .project-card-content {
+    padding: var(--spacing-xs) var(--spacing-lg) var(--spacing-lg); /* aproxima chip da imagem */
+}
+.featured-projects-section .project-card-content {
     padding: var(--spacing-lg); /* extra inset on index cards */
 }
 .project-card > .button {
@@ -431,6 +438,20 @@ main {
     align-self: flex-start;
 }
 .featured-projects-section .project-card > .button {
+    margin-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.portfolio-listing-section .project-card {
+    min-height: auto;
+    padding: 0; /* use content padding only */
+    justify-content: flex-start; /* evita empurrar chip para baixo */
+    gap: var(--spacing-xs);
+}
+.portfolio-listing-section .project-card-content {
+    padding: var(--spacing-xs) var(--spacing-lg) var(--spacing-lg);
+}
+.portfolio-listing-section .project-card > .button {
     margin-left: var(--spacing-lg);
     margin-bottom: var(--spacing-lg);
 }
@@ -475,6 +496,33 @@ main {
     letter-spacing: 0.5px;
     font-weight: 500;
 }
+
+/* Portfolio listing cards (match featured projects layout) */
+.portfolio-listing-section .project-card {
+    min-height: auto;
+    padding-bottom: var(--spacing-lg);
+}
+.portfolio-listing-section .project-card-content {
+    padding: var(--spacing-lg);
+}
+.portfolio-listing-section .project-card > .button {
+    margin-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Portfolio listing cards alignments (match featured projects) */
+.portfolio-listing-section .project-card {
+    min-height: auto;
+    padding-bottom: var(--spacing-lg);
+}
+.portfolio-listing-section .project-card-content {
+    padding: var(--spacing-lg);
+}
+.portfolio-listing-section .project-card > .button {
+    margin-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
 
 
 
@@ -1444,6 +1492,13 @@ main {
     .featured-projects-section .project-grid {
         padding: 0; /* match portfolio card width on tablet/mobile */
     }
+    .featured-projects-section .project-card {
+        justify-content: flex-start;
+        gap: var(--spacing-xs);
+    }
+    .featured-projects-section .project-card-content {
+        padding: var(--spacing-xs) var(--spacing-lg) var(--spacing-lg);
+    }
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
@@ -1488,15 +1543,28 @@ main {
     .featured-projects-section .project-card {
         min-height: auto;
         padding: var(--spacing-sm);
+        justify-content: flex-start;
+        gap: var(--spacing-xs);
     }
     .featured-projects-section .project-card-content {
-        padding: var(--spacing-sm);
+        padding: var(--spacing-xs) var(--spacing-sm) var(--spacing-sm);
     }
     .project-card {
         padding: var(--spacing-sm);
     }
     .project-card-content {
         padding: var(--spacing-sm);
+    }
+    .portfolio-listing-section .project-card {
+        min-height: auto;
+        padding: 0;
+    }
+    .portfolio-listing-section .project-card-content {
+        padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-lg);
+    }
+    .portfolio-listing-section .project-card > .button {
+        margin-left: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
     }
 
     .about-profile-image {
