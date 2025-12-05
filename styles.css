@@ -379,8 +379,10 @@ main {
     transition: transform var(--transition-speed) ease-out, box-shadow var(--transition-speed) ease-out;
     display: flex; /* Make it a flex container */
     flex-direction: column; /* Stack children vertically */
+    justify-content: space-between;
     gap: var(--spacing-md); /* Consistent spacing between sections */
     padding-bottom: var(--spacing-lg); /* Add space for the button */
+    min-height: 720px;
     position: relative;
 }
 .project-card::after {
@@ -410,10 +412,27 @@ main {
 }
 .project-card-content {
   padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg); /* even top spacing under image */
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+.featured-projects-section .project-card-content {
+    padding: var(--spacing-lg); /* extra inset on index cards */
 }
 .project-card > .button {
     align-self: flex-start;
-    margin: 0 var(--spacing-lg) var(--spacing-lg);
+    margin: var(--spacing-md) 0 0 0;
+    display: inline-block;
+    width: auto;
+    min-width: 0;
+    padding: var(--spacing-sm) var(--spacing-lg);
+}
+.project-card-content .button {
+    align-self: flex-start;
+}
+.featured-projects-section .project-card > .button {
+    margin-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
 }
 
 
@@ -455,12 +474,6 @@ main {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 500;
-}
-
-.project-card > .button {
-    align-self: center; /* Center horizontally */
-    margin-top: auto; /* Push to the bottom */
-    margin-bottom: var(--spacing-lg); /* Space from the bottom of the card */
 }
 
 
