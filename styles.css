@@ -625,7 +625,7 @@ main {
 .hero-grid {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--spacing-xxl);
 }
 .hero-copy {
@@ -698,6 +698,8 @@ main {
 }
 .hero-visual {
     justify-self: stretch;
+    display: flex;
+    align-items: center;
 }
 .hero-visual-image {
     width: 100%;
@@ -705,6 +707,7 @@ main {
     display: block;
     border-radius: calc(var(--border-radius) * 1.5);
     box-shadow: var(--box-shadow-lg), var(--glow-primary);
+    
 }
 .hero-card {
     background: var(--glass-background);
@@ -1438,6 +1441,9 @@ main {
         left: calc(var(--timeline-axis) + 1px);
         right: auto;
     }
+    .featured-projects-section .project-grid {
+        padding: 0; /* match portfolio card width on tablet/mobile */
+    }
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
@@ -1476,8 +1482,21 @@ main {
     }
    
     .featured-projects-section .container {
-  padding-left: calc(var(--spacing-lg) + var(--spacing-sm));
-  padding-right: calc(var(--spacing-lg) + var(--spacing-sm));
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+    .featured-projects-section .project-card {
+        min-height: auto;
+        padding: var(--spacing-sm);
+    }
+    .featured-projects-section .project-card-content {
+        padding: var(--spacing-sm);
+    }
+    .project-card {
+        padding: var(--spacing-sm);
+    }
+    .project-card-content {
+        padding: var(--spacing-sm);
     }
 
     .about-profile-image {
