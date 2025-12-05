@@ -1018,6 +1018,110 @@ main {
     margin-top: var(--spacing-xxl);
 }
 
+.project-carousel {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: var(--glass-background);
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-md);
+    position: relative;
+}
+.carousel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+}
+.carousel-controls {
+    position: absolute;
+    top: -56px; /* place arrows above the carousel */
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+}
+.carousel-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--border-subtle);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-heading);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease-out;
+    pointer-events: auto;
+}
+.carousel-btn:hover,
+.carousel-btn:focus-visible {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-primary-light);
+    color: var(--color-primary-light);
+}
+.carousel-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - var(--spacing-md)) / 2); /* show two cards on desktop */
+    gap: var(--spacing-md); 
+    align-items: stretch;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0; /* let images fill the card height */
+    scrollbar-width: none;
+}
+.carousel-track::-webkit-scrollbar {
+    height: 8px;
+}
+.carousel-track::-webkit-scrollbar-thumb {
+   display: none;
+}
+.carousel-card {
+    scroll-snap-align: start;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: none;
+    transition: transform var(--transition-speed) ease-out, box-shadow var(--transition-speed) ease-out;
+    height: 420px;
+}
+.carousel-card a {
+    display: block;
+    color: var(--color-heading);
+    text-decoration: none;
+    height: 100%;
+}
+.carousel-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--spacing-xs);
+    overflow: hidden;
+
+}
+.carousel-card:hover,
+.carousel-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: none;
+    border-color: transparent;
+}
+
+@media (max-width: 768px) {
+    .carousel-track {
+        grid-auto-columns: 100%; /* one card per view on mobile */
+    }
+    .carousel-card {
+        height: 280px;
+    }
+}
+
 .cta-section {
     text-align: center;
     padding: var(--spacing-xxl) 0;

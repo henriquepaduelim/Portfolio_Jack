@@ -59,6 +59,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Project carousel controls
+    const carousels = document.querySelectorAll('.project-carousel');
+    carousels.forEach(carousel => {
+        const track = carousel.querySelector('[data-carousel-track]');
+        const prevBtn = carousel.querySelector('.carousel-btn.prev');
+        const nextBtn = carousel.querySelector('.carousel-btn.next');
+        if (!track || !prevBtn || !nextBtn) return;
+
+        const slideWidth = () => track.firstElementChild?.getBoundingClientRect().width || 0;
+        const scrollBy = () => slideWidth() + parseFloat(getComputedStyle(track).gap || 0);
+
+        prevBtn.addEventListener('click', () => {
+            track.scrollBy({ left: -scrollBy(), behavior: 'smooth' });
+        });
+        nextBtn.addEventListener('click', () => {
+            track.scrollBy({ left: scrollBy(), behavior: 'smooth' });
+        });
+    });
+
     // Scroll-triggered Animations
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
