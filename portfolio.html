@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio of graphic designer Jack Scoular with branding systems, marketing campaigns, mobile app UI/UX, and editorial layouts. Browse case studies and visuals.">
     <title>Jack Scoular - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -18,7 +21,15 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li class="has-dropdown">
+                    <a href="portfolio.html" class="active">Portfolio</a>
+                    <ul class="dropdown" aria-label="Portfolio projects">
+                        <li><a href="project-1.html">Advertising Campaign</a></li>
+                        <li><a href="project-2.html">SwiftFox Creative: Agency Brand Identity</a></li>
+                        <li><a href="project-3.html">Roam & Revel: Travel Magazine</a></li>
+                        <li><a href="project-4.html">ClearPath: Accessibility App Concept</a></li>
+                    </ul>
+                </li>
                 <li><a href="collaborate-contact.html">Collaborate & Contact</a></li>
             </ul>
         </nav>
@@ -28,7 +39,15 @@
         <ul role="menubar">
             <li role="none"><a href="index.html" role="menuitem">Home</a></li>
             <li role="none"><a href="about.html" role="menuitem">About</a></li>
-            <li role="none"><a href="portfolio.html" role="menuitem" class="active">Portfolio</a></li>
+            <li role="none" class="has-dropdown">
+                <a href="portfolio.html" role="menuitem" class="active">Portfolio</a>
+                <ul class="dropdown">
+            <li role="none"><a href="project-1.html" role="menuitem">Advertising Campaign</a></li>
+            <li role="none"><a href="project-2.html" role="menuitem">SwiftFox Creative: Agency Brand Identity</a></li>
+            <li role="none"><a href="project-3.html" role="menuitem">Roam & Revel: Travel Magazine</a></li>
+            <li role="none"><a href="project-4.html" role="menuitem">ClearPath: Accessibility App Concept</a></li>
+                </ul>
+            </li>
             <li role="none"><a href="collaborate-contact.html" role="menuitem">Collaborate & Contact</a></li>
         </ul>
     </div>
@@ -80,57 +99,57 @@
         <section class="section portfolio-listing-section">
             <div class="container">
                 <h2 class="section-title reveal-on-scroll" id="work-list">My Projects</h2>
-                <p class="intro-paragraph reveal-on-scroll">Here you'll find a selection of my recent design projects, showcasing my expertise in visual communication, branding, and digital media. Each project demonstrates my creative process and ability to deliver impactful design solutions.</p>
+                <p class="intro-paragraph reveal-on-scroll">Campaigns, brand systems, editorial, and product concepts—each project blends strategy with visuals tailored to its audience and medium.</p>
 
                 <div class="project-grid featured-project-grid">
                     <article class="project-card reveal-on-scroll">
                         <a href="project-1.html" class="project-image-wrapper">
-                            <img src="media/project1.jpg" alt="Project Alpha Image" class="project-image">
+                            <img src="media/Project-Ad Hero.png" alt="Advertising Campaign Image" class="project-image">
                         </a>
                         <div class="project-card-content">
                         <div class="project-details">
-                            <span class="project-chip">Branding</span>
-                            <h3>Project Alpha: Brand Identity & Guidelines</h3>
-                            <p>A comprehensive branding initiative to create a distinctive visual identity for a new startup, including logo design, color palette, typography, and usage guidelines.</p>
+                            <span class="project-chip">Campaign</span>
+                            <h3>Advertising Campaign</h3>
+                            <p>In this project I created a digital advertisement campaign for Bath & Body Works, a popular global retail brand. The “Scents That Cast A Spell“ campaign is promoting a seasonal Halloween-themed line of fragrances and was designed to appeal to the brand’s key demographic of women aged 16-24. The typography I selected is a departure from the brand’s traditional typeface and I used spooky colour palette so the eye is drawn to the product image.</p>
                         </div>
                         <a href="project-1.html" class="button">View Project</a>
                     </article>
 
                     <article class="project-card reveal-on-scroll">
                         <a href="project-2.html" class="project-image-wrapper">
-                            <img src="media/project2.jpg" alt="Project Beta Image" class="project-image">
+                            <img src="media/Project - SwiftFox Logo.png" alt="SwiftFox Creative: Agency Brand Identity Image" class="project-image">
                         </a>
                         <div class="project-card-content">
                         <div class="project-details">
-                            <span class="project-chip">Marketing</span>
-                            <h3>Project Beta: Marketing Campaign Design</h3>
-                            <p>Designed a series of engaging digital and print assets for a marketing campaign, including social media graphics, web banners, and print advertisements, focusing on consistent messaging and visual appeal.</p>
+                            <span class="project-chip">Branding</span>
+                            <h3>SwiftFox Creative: Agency Brand Identity</h3>
+                            <p>I created this brand identity and logo for a fictitious creative agency specializing in digital marketing. I wanted to create a modern and distinctive emblem that could stand on its own with a contemporary sans-serif font that screams digital. The fox emblem is sleek and speaks to the speed and efficiency of the agency. The cool tones of the colour palette represent security, trust, and longevity, and all three primary colours provide excellent contrast for print and digital applications. I also highlighted the word fox within the brand name for a pop of colour and so that “swift creative” is reinforced on second glance.</p>
                         </div>
                         <a href="project-2.html" class="button">View Project</a>
                     </article>
 
                     <article class="project-card reveal-on-scroll">
                         <a href="project-3.html" class="project-image-wrapper">
-                            <img src="media/project3.jpg" alt="Project Gamma Image" class="project-image">
+                            <img src="media/Magazine Project Hero.png" alt="Roam & Revel: Travel Magazine Image" class="project-image">
                         </a>
                         <div class="project-card-content">
                         <div class="project-details">
-                            <span class="project-chip">UI/UX</span>
-                            <h3>Project Gamma: Mobile App UI/UX Design</h3>
-                            <p>Created a user-friendly and aesthetically pleasing interface for a mobile application, focusing on intuitive navigation, wireframing, prototyping, and visual design to enhance the user experience.</p>
+                            <span class="project-chip">Editorial</span>
+                            <h3>Roam & Revel: Travel Magazine</h3>
+                            <p>Using my own collection of personal photography from a trip to Egypt, I created a first edition for a luxury travel magazine. I produced the entire issue, including editing and curating photography to promote a trip down the Nile from Alexandria to Luxor and the Valley of the Kings. The magazine also features original articles that I researched and wrote to tie into the photography of places I have actually visited, which include some of the world’s most coveted archaeological sites.</p>
                         </div>
                         <a href="project-3.html" class="button">View Project</a>
                     </article>
 
                     <article class="project-card reveal-on-scroll">
                         <a href="project-4.html" class="project-image-wrapper">
-                            <img src="media/project1.jpg" alt="Project Delta Image" class="project-image">
+                            <img src="media/app-home.png" alt="ClearPath: Accessibility App Concept Image" class="project-image">
                         </a>
                         <div class="project-card-content">
                         <div class="project-details">
-                            <span class="project-chip">Editorial</span>
-                            <h3>Project Delta: Editorial Layout for Magazine</h3>
-                            <p>Designed the complete editorial layout for a lifestyle magazine, including cover, article spreads, and advertisements, ensuring visual hierarchy, readability, and brand consistency.</p>
+                            <span class="project-chip">Product Design</span>
+                            <h3>ClearPath: Accessibility App Concept</h3>
+                            <p>ClearPath is an app concept I developed to help people find accessible public places. Many Canadians do not realize how many public spaces do not even have accessible entrances, let alone barrier-free interiors and washrooms. After a workplace accident, I was forced to experience this first-hand. ClearPath is designed to be extremely user-friendly with a simplified but effective grading system for accessibility. Users can look up addresses in their community or use our map to find accessible businesses or public spaces.</p>
                         </div>
                         <a href="project-4.html" class="button">View Project</a>
                     </article>

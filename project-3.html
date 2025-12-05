@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mobile app UI/UX design by Jack Scoular: user research, wireframes, prototypes, and a complete design system for an intuitive, visually rich experience.">
-    <title>Jack Scoular - Project Gamma</title>
+    <meta name="description" content="Using my own collection of personal photography from a trip to Egypt, I created a first edition for a luxury travel magazine. I produced the entire issue, including editing and curating photography to promote a trip down the Nile from Alexandria to Luxor and the Valley of the Kings. The magazine also features original articles that I researched and wrote to tie into the photography of places I have actually visited, which include some of the world’s most coveted archaeological sites.">
+    <title>Jack Scoular - Roam & Revel: Travel Magazine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -18,7 +21,15 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
+                <li class="has-dropdown">
+                    <a href="portfolio.html">Portfolio</a>
+                    <ul class="dropdown" aria-label="Portfolio projects">
+                        <li><a href="project-1.html">Advertising Campaign</a></li>
+                        <li><a href="project-2.html">SwiftFox Creative: Agency Brand Identity</a></li>
+                        <li><a href="project-3.html">Roam & Revel: Travel Magazine</a></li>
+                        <li><a href="project-4.html">ClearPath: Accessibility App Concept</a></li>
+                    </ul>
+                </li>
                 <li><a href="collaborate-contact.html">Collaborate & Contact</a></li>
             </ul>
         </nav>
@@ -28,7 +39,15 @@
         <ul role="menubar">
             <li role="none"><a href="index.html" role="menuitem">Home</a></li>
             <li role="none"><a href="about.html" role="menuitem">About</a></li>
-            <li role="none"><a href="portfolio.html" role="menuitem">Portfolio</a></li>
+            <li role="none" class="has-dropdown">
+                <a href="portfolio.html" role="menuitem">Portfolio</a>
+                <ul class="dropdown">
+            <li role="none"><a href="project-1.html" role="menuitem">Advertising Campaign</a></li>
+            <li role="none"><a href="project-2.html" role="menuitem">SwiftFox Creative: Agency Brand Identity</a></li>
+            <li role="none"><a href="project-3.html" role="menuitem">Roam & Revel: Travel Magazine</a></li>
+            <li role="none"><a href="project-4.html" role="menuitem">ClearPath: Accessibility App Concept</a></li>
+                </ul>
+            </li>
             <li role="none"><a href="collaborate-contact.html" role="menuitem">Collaborate & Contact</a></li>
         </ul>
     </div>
@@ -37,36 +56,37 @@
     <main id="primary-content">
         <section class="section project-single-section">
             <div class="container">
-                <h1 class="reveal-on-scroll">Project Gamma: Mobile App UI/UX Design</h1>
-                <p class="subtitle reveal-on-scroll">Designing an intuitive and visually engaging interface for a modern mobile application.</p>
+                <h1 class="reveal-on-scroll">Roam & Revel: Travel Magazine</h1>
+                <p class="subtitle reveal-on-scroll">Using my own collection of personal photography from a trip to Egypt, I created a first edition for a luxury travel magazine. I produced the entire issue, including editing and curating photography to promote a trip down the Nile from Alexandria to Luxor and the Valley of the Kings. The magazine also features original articles that I researched and wrote to tie into the photography of places I have actually visited, which include some of the world’s most coveted archaeological sites.</p>
 
                 <div class="project-hero-image reveal-on-scroll">
-                    <img src="media/project3.jpg" alt="Project Gamma hero image">
+                    <img src="media/Magazine Project Hero.png" alt="Roam & Revel travel magazine cover and spreads">
+                    <img src="media/Magazine Project 2.png" alt="Roam & Revel travel magazine cover and spreads">
                 </div>
 
                 <div class="project-details-grid reveal-on-scroll">
                     <div>
                         <h2>Overview</h2>
-                        <p>This project involved the complete UI/UX design for a new mobile application. The primary goal was to create an interface that is not only aesthetically pleasing but also highly functional, intuitive, and user-friendly. This encompassed understanding user needs, defining user flows, and translating complex features into simple, elegant visual designs.</p>
-                        <p>My role included conducting user research, creating wireframes and interactive prototypes, designing the complete visual interface (UI), and ensuring a seamless user experience (UX) across all app functionalities. I worked closely with stakeholders to iterate on designs and delivered a final design system ready for development, focusing on clarity, consistency, and engaging interactions.</p>
+                        <p>Using my own collection of personal photography from a trip to Egypt, I created a first edition for a luxury travel magazine. I produced the entire issue, including editing and curating photography to promote a trip down the Nile from Alexandria to Luxor and the Valley of the Kings.</p>
+                        <p>The magazine also features original articles that I researched and wrote to tie into the photography of places I have actually visited, which include some of the world’s most coveted archaeological sites.</p>
                     </div>
                     <div>
                         <h2>Project Details</h2>
                         <dl>
                             <dt>Role:</dt>
-                            <dd>UI/UX Designer, Visual Designer</dd>
+                            <dd>Creative Director, Copywriter, & Graphic Designer</dd>
 
                             <dt>Technologies:</dt>
-                            <dd>Figma, Adobe XD, Adobe Illustrator, Miro</dd>
+                            <dd>Adobe Illustrator, Adobe Photoshop, Figma</dd>
+
+                            <dt>Skills:</dt>
+                            <dd>Photography, Copywriting, Print Design</dd>
+
+                            <dt>Skills:</dt>
+                            <dd>Photography, Copywriting, Print Design</dd>
 
                             <dt>Year:</dt>
-                            <dd>2025</dd>
-
-                            <dt>Live Demo:</dt>
-                            <dd><a href="#" target="_blank">View Live</a></dd>
-
-                            <dt>Repository:</dt>
-                            <dd><a href="#" target="_blank">GitHub Repo</a></dd>
+                            <dd>2024</dd>
                         </dl>
                     </div>
                 </div>
@@ -74,11 +94,10 @@
                 <div class="highlights reveal-on-scroll">
                     <h2>Highlights</h2>
                     <ul>
-                        <li>Conducted user research and created detailed user personas and journey maps.</li>
-                        <li>Developed low-fidelity wireframes and high-fidelity interactive prototypes using Figma.</li>
-                        <li>Designed a comprehensive design system including components, typography, and color palettes.</li>
-                        <li>Ensured the UI adhered to platform-specific guidelines (iOS Human Interface Guidelines, Material Design).</li>
-                        <li>Collaborated with developers to ensure feasibility and smooth implementation of the design.</li>
+                        <li>Using my own collection of personal photography from a trip to Egypt, I created a first edition for a luxury travel magazine.</li>
+                        <li>I produced the entire issue, including editing and curating photography to promote a trip down the Nile from Alexandria to Luxor and the Valley of the Kings.</li>
+                        <li>The magazine also features original articles that I researched and wrote to tie into the photography of places I have actually visited.</li>
+                        <li>These places include some of the world’s most coveted archaeological sites.</li>
                     </ul>
                 </div>
 

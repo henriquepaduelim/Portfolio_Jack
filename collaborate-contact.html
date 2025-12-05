@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collaborate and contact Jack Scoular in Toronto for branding, marketing design, and UI/UX projects. Request a meeting or send a message to start.">
     <title>Jack Scoular - Collaborate & Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -18,7 +21,15 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
+                <li class="has-dropdown">
+                    <a href="portfolio.html">Portfolio</a>
+                    <ul class="dropdown" aria-label="Portfolio projects">
+                        <li><a href="project-1.html">Advertising Campaign</a></li>
+                        <li><a href="project-2.html">SwiftFox Creative: Agency Brand Identity</a></li>
+                        <li><a href="project-3.html">Roam & Revel: Travel Magazine</a></li>
+                        <li><a href="project-4.html">ClearPath: Accessibility App Concept</a></li>
+                    </ul>
+                </li>
                 <li><a href="collaborate-contact.html" class="active">Collaborate & Contact</a></li>
             </ul>
         </nav>
@@ -28,7 +39,15 @@
         <ul role="menubar">
             <li role="none"><a href="index.html" role="menuitem">Home</a></li>
             <li role="none"><a href="about.html" role="menuitem">About</a></li>
-            <li role="none"><a href="portfolio.html" role="menuitem">Portfolio</a></li>
+            <li role="none" class="has-dropdown">
+                <a href="portfolio.html" role="menuitem">Portfolio</a>
+                <ul class="dropdown">
+            <li role="none"><a href="project-1.html" role="menuitem">Advertising Campaign</a></li>
+            <li role="none"><a href="project-2.html" role="menuitem">SwiftFox Creative: Agency Brand Identity</a></li>
+            <li role="none"><a href="project-3.html" role="menuitem">Roam & Revel: Travel Magazine</a></li>
+            <li role="none"><a href="project-4.html" role="menuitem">ClearPath: Accessibility App Concept</a></li>
+                </ul>
+            </li>
             <li role="none"><a href="collaborate-contact.html" role="menuitem" class="active">Collaborate & Contact</a></li>
         </ul>
     </div>
@@ -101,7 +120,7 @@
         <section class="section contact-section" id="contact-form-section">
             <div class="container">
                 <h2 class="section-title reveal-on-scroll">Get In Touch</h2>
-                <p class="intro-paragraph reveal-on-scroll">I'm always open to new opportunities, collaborations, and conversations. Whether you have a project in mind, a question, or just want to connect, feel free to reach out using the form below or through my social channels.</p>
+                <!-- <p class="intro-paragraph reveal-on-scroll">I'm always open to new opportunities, collaborations, and conversations. Whether you have a project in mind, a question, or just want to connect, feel free to reach out using the form below or through my social channels.</p> -->
 
                 <div class="contact-form reveal-on-scroll">
                     <form action="#" method="POST">

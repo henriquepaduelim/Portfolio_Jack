@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Editorial magazine layout by Jack Scoular featuring grid systems, custom graphics, and press-ready spreads that balance photography, typography, and flow.">
-    <title>Jack Scoular - Project Delta</title>
+    <meta name="description" content="ClearPath is an app concept I developed to help people find accessible public places. Many Canadians do not realize how many public spaces do not even have accessible entrances, let alone barrier-free interiors and washrooms. After a workplace accident, I was forced to experience this first-hand. ClearPath is designed to be extremely user-friendly with a simplified but effective grading system for accessibility. Users can look up addresses in their community or use our map to find accessible businesses or public spaces.">
+    <title>Jack Scoular - ClearPath: Accessibility App Concept</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -18,7 +21,15 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
+                <li class="has-dropdown">
+                    <a href="portfolio.html">Portfolio</a>
+                    <ul class="dropdown" aria-label="Portfolio projects">
+                        <li><a href="project-1.html">Advertising Campaign</a></li>
+                        <li><a href="project-2.html">SwiftFox Creative: Agency Brand Identity</a></li>
+                        <li><a href="project-3.html">Roam & Revel: Travel Magazine</a></li>
+                        <li><a href="project-4.html">ClearPath: Accessibility App Concept</a></li>
+                    </ul>
+                </li>
                 <li><a href="collaborate-contact.html">Collaborate & Contact</a></li>
             </ul>
         </nav>
@@ -28,7 +39,15 @@
         <ul role="menubar">
             <li role="none"><a href="index.html" role="menuitem">Home</a></li>
             <li role="none"><a href="about.html" role="menuitem">About</a></li>
-            <li role="none"><a href="portfolio.html" role="menuitem">Portfolio</a></li>
+            <li role="none" class="has-dropdown">
+                <a href="portfolio.html" role="menuitem">Portfolio</a>
+                <ul class="dropdown">
+            <li role="none"><a href="project-1.html" role="menuitem">Advertising Campaign</a></li>
+            <li role="none"><a href="project-2.html" role="menuitem">SwiftFox Creative: Agency Brand Identity</a></li>
+            <li role="none"><a href="project-3.html" role="menuitem">Roam & Revel: Travel Magazine</a></li>
+            <li role="none"><a href="project-4.html" role="menuitem">ClearPath: Accessibility App Concept</a></li>
+                </ul>
+            </li>
             <li role="none"><a href="collaborate-contact.html" role="menuitem">Collaborate & Contact</a></li>
         </ul>
     </div>
@@ -37,36 +56,34 @@
     <main id="primary-content">
         <section class="section project-single-section">
             <div class="container">
-                <h1 class="reveal-on-scroll">Project Delta: Editorial Layout for Magazine</h1>
-                <p class="subtitle reveal-on-scroll">Designing engaging and cohesive editorial layouts for print and digital publications.</p>
+                <h1 class="reveal-on-scroll">ClearPath: Accessibility App Concept</h1>
+                <p class="subtitle reveal-on-scroll">ClearPath is an app concept I developed to help people find accessible public places. Many Canadians do not realize how many public spaces do not even have accessible entrances, let alone barrier-free interiors and washrooms. After a workplace accident, I was forced to experience this first-hand. ClearPath is designed to be extremely user-friendly with a simplified but effective grading system for accessibility. Users can look up addresses in their community or use our map to find accessible businesses or public spaces.</p>
 
                 <div class="project-hero-image reveal-on-scroll">
-                    <img src="media/project1.jpg" alt="Project Delta hero image">
+                    <img src="media/Project-ClearPath Hero.png" alt="ClearPath accessibility app screens">
+                    <img src="media/Project-ClearPath 2.png" alt="ClearPath accessibility app screens.2">
                 </div>
 
                 <div class="project-details-grid reveal-on-scroll">
                     <div>
                         <h2>Overview</h2>
-                        <p>This project involved the complete editorial design and layout for a lifestyle magazine, from concept development to final print-ready files. The primary objective was to create a visually cohesive and engaging reading experience, balancing strong photography with clear typography and intuitive information hierarchy. The design needed to reflect the magazine's brand identity and appeal to its target demographic.</p>
-                        <p>My role included conceptualizing page layouts, selecting appropriate typefaces, designing custom graphics and infographics, and ensuring consistent visual style throughout the publication. I managed the placement of all editorial content, advertisements, and imagery, working closely with editors and photographers to achieve a polished and professional final product suitable for both print and digital distribution.</p>
+                        <p>ClearPath is an app concept I developed to help people find accessible public places. Many Canadians do not realize how many public spaces do not even have accessible entrances, let alone barrier-free interiors and washrooms. After a workplace accident, I was forced to experience this first-hand.</p>
+                        <p>ClearPath is designed to be extremely user-friendly with a simplified but effective grading system for accessibility. Users can look up addresses in their community or use our map to find accessible businesses or public spaces.</p>
                     </div>
                     <div>
                         <h2>Project Details</h2>
                         <dl>
                             <dt>Role:</dt>
-                            <dd>Editorial Designer, Layout Artist</dd>
+                            <dd>Creative Director & Graphic Designer</dd>
 
                             <dt>Technologies:</dt>
-                            <dd>Adobe InDesign, Adobe Photoshop, Adobe Illustrator</dd>
+                            <dd>Adobe Illustrator, Adobe Photoshop, Figma</dd>
+
+                            <dt>Skills:</dt>
+                            <dd>Wireframing, App Development, Product Design</dd>
 
                             <dt>Year:</dt>
                             <dd>2024</dd>
-
-                            <dt>Live Demo:</dt>
-                            <dd><a href="#" target="_blank">View Live</a></dd>
-
-                            <dt>Repository:</dt>
-                            <dd><a href="#" target="_blank">GitHub Repo</a></dd>
                         </dl>
                     </div>
                 </div>
@@ -74,11 +91,11 @@
                 <div class="highlights reveal-on-scroll">
                     <h2>Highlights</h2>
                     <ul>
-                        <li>Developed a dynamic grid system for magazine spreads, optimizing readability and visual flow.</li>
-                        <li>Designed bespoke infographics and data visualizations to enhance complex article content.</li>
-                        <li>Managed image selection and retouching to ensure high-quality visual presentation throughout.</li>
-                        <li>Ensured all layouts met print specifications and provided press-ready files.</li>
-                        <li>Collaborated closely with editorial and marketing teams to maintain brand voice and messaging.</li>
+                        <li>ClearPath is an app concept I developed to help people find accessible public places.</li>
+                        <li>Many Canadians do not realize how many public spaces do not even have accessible entrances, let alone barrier-free interiors and washrooms.</li>
+                        <li>After a workplace accident, I was forced to experience this first-hand.</li>
+                        <li>ClearPath is designed to be extremely user-friendly with a simplified but effective grading system for accessibility.</li>
+                        <li>Users can look up addresses in their community or use our map to find accessible businesses or public spaces.</li>
                     </ul>
                 </div>
 
