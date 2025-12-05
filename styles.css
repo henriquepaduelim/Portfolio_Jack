@@ -607,6 +607,13 @@ main {
 .hero-visual {
     justify-self: stretch;
 }
+.hero-visual-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: calc(var(--border-radius) * 1.5);
+    box-shadow: var(--box-shadow-lg), var(--glow-primary);
+}
 .hero-card {
     background: var(--glass-background);
     border: 1px solid var(--border-subtle);
@@ -772,6 +779,7 @@ main {
     padding-top: var(--spacing-xxl);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: var(--spacing-xxl);
+    border-radius: var(--border-radius);
 }
 .timeline {
     position: relative;
