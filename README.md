@@ -1,12 +1,13 @@
 # Jack Scoular Portfolio
 
-A static site showcasing Jack Scoular’s design work, with sections for about, projects, collaboration, and contact.
+Static, multi-page portfolio for Jack Scoular (designer). Includes a hero overview, featured projects, full portfolio listing, individual case studies, and a collaborate/contact page.
 
 ## Overview
-- **Pages**: `index.html` (landing), `about.html`, `portfolio.html`, `project-*.html`, `collaborate.html`, `contact.html`.
-- **Styles/JS**: `styles.css` for layout/theme; `main.js` for mobile menu and reveal effects.
-- **Typography**: Playfair Display and Inter via Google Fonts.
-- **Icons**: Font Awesome CDN for social/UI icons.
+- **Pages**: `index.html` (home + featured projects), `about.html`, `portfolio.html`, `project-1.html` … `project-4.html`, `collaborate-contact.html`.
+- **Styles/JS**: `styles.css` for theme/layout, responsive tweaks, and carousels; `main.js` for mobile nav toggle, dropdown behavior, reveal-on-scroll, and carousel controls.
+- **Typography**: Playfair Display (headings), Inter (body), Space Grotesk (hero H1s) via Google Fonts.
+- **Icons**: Font Awesome CDN for social and UI icons.
+- **Media**: project/hero assets live in `media/`.
 
 ## Run locally
 1. Clone or download the repo.
@@ -15,8 +16,9 @@ A static site showcasing Jack Scoular’s design work, with sections for about, 
 
 ## Quick customization
 - Replace copy/images in the HTML pages.
-- Swap image placeholders (`.image-placeholder`) and the map block in `collaborate.html`.
+- Swap project/hero images in `/media` and update `project-*.html` or `portfolio.html` copy.
 - Adjust colors/typography tokens in `styles.css` under `:root`.
+- Mobile nav and carousels rely on `main.js`; keep classes/structure (`has-dropdown`, `dropdown`, `project-carousel`) intact if you modify markup.
 
 ## License
 Internal/portfolio use. Update if publishing publicly.
