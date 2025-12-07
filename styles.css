@@ -188,13 +188,13 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+    }
 
 .brand a {
     font-family: var(--font-brand);
-    font-size: clamp(2rem, 4vw, 2.9rem);
+    font-size: larger;
     font-weight: 400;
-    line-height: 1.05;
+    line-height: 1;
     color: var(--color-heading);
     text-decoration: none;
     
@@ -928,64 +928,77 @@ main {
     border-radius: var(--border-radius);
 }
 .timeline {
-    position: relative;
-    max-width: 900px;
+    display: grid;
+    gap: var(--spacing-sm);
+    max-width: 1000px;
     margin: var(--spacing-xl) auto;
-    padding: var(--spacing-sm) 0;
-}
-.timeline::before {
-    content: '';
-    position: absolute;
-    width: 2px;
-    background-color: var(--color-primary-light);
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -1px;
-    z-index: 0;
+    padding-bottom: var(--spacing-lg);
 }
 .timeline-item {
-    padding: var(--spacing-xl) 0;
-    position: relative;
-    width: 50%;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: var(--spacing-md);
+    align-items: start;
+    background: var(--color-card-background);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--border-radius);
+    padding: calc(var(--spacing-md) + var(--spacing-xs)) var(--spacing-lg);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
-.timeline-item:nth-child(odd) {
-    left: 0;
-    padding-right: var(--spacing-xl);
-    text-align: right;
+.timeline-date {
+    font-weight: 700;
+    color: var(--color-primary-light);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: var(--font-size-sm);
 }
-.timeline-item:nth-child(even) {
-    left: 50%;
-    padding-left: var(--spacing-xl);
-    text-align: left;
+.timeline-content {
+    display: grid;
+    gap: var(--spacing-xs);
 }
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--color-primary);
-    border: 2px solid var(--color-background);
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
+.timeline-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
 }
-.timeline-item:nth-child(odd)::before {
-    right: -6px;
+.timeline-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(255, 189, 0, 0.12);
+    color: var(--color-primary-light);
+    font-weight: 700;
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
 }
-.timeline-item:nth-child(even)::before {
-    left: -6px;
+.timeline-pill--education {
+    background: rgba(83, 141, 255, 0.15);
+    color: #a6c6ff;
 }
 .timeline-item h3 {
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-lg);
     color: var(--color-heading);
-    margin-bottom: var(--spacing-xs);
+    margin: 0;
 }
-.timeline-item p {
-    font-size: var(--font-size-sm);
+.timeline-role {
+    font-size: var(--font-size-base);
     color: var(--color-body-text);
-    line-height: 1.5;
+    margin: 0;
+    font-weight: 600;
+}
+.timeline-note {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.timeline-section .section-title {
+    margin-bottom: var(--spacing-lg);
 }
 
 .project-single-section {
@@ -1468,34 +1481,12 @@ main {
         text-align: center;
     }
     .timeline {
-        max-width: unset; /* Allow to take full width */
-        margin: var(--spacing-xl) var(--spacing-md); /* Adjust margin for smaller screens */
-        padding: var(--spacing-sm) 0;
-    }
-    .timeline::before {
-        left: var(--timeline-axis); /* Position vertical line to the left */
-        margin-left: 0;
+        max-width: unset;
+        margin: var(--spacing-xl) 0;
     }
     .timeline-item {
-        width: 100%;
-        padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm) calc(var(--timeline-axis) + var(--spacing-lg)); /* Adjust padding for bullet point and text */
-        text-align: left; /* Ensure left alignment */
-        position: relative; /* Ensure ::before is positioned relative to this */
-    }
-    .timeline-item:nth-child(odd),
-    .timeline-item:nth-child(even) {
-        left: 0;
-        padding-right: var(--spacing-sm); /* Keep right padding consistent */
-    }
-    .timeline-item::before {
-        left: calc(var(--timeline-axis) + 1px); /* Nudge to center on the 2px line */
-        top: 1.2rem; /* A fixed value to align with the first line of text */
-        transform: translate(-50%, -50%); /* Center bullet on the line */
-    }
-    .timeline-item:nth-child(odd)::before,
-    .timeline-item:nth-child(even)::before {
-        left: calc(var(--timeline-axis) + 1px);
-        right: auto;
+        grid-template-columns: 150px 1fr;
+        padding: var(--spacing-md) var(--spacing-lg);
     }
     .featured-projects-section .project-grid {
         padding: 0; /* match portfolio card width on tablet/mobile */
@@ -1582,24 +1573,20 @@ main {
         grid-template-columns: 1fr; /* Single column on mobile */
     }
     .timeline {
-        --timeline-axis: var(--spacing-md);
-    }
-    .timeline::before {
-        left: var(--timeline-axis);
-        top: var(--spacing-sm);
-        bottom: var(--spacing-sm);
-        margin-left: 0;
+        margin: var(--spacing-lg) 0;
+        gap: var(--spacing-sm);
     }
     .timeline-item {
-        width: 100%;
-        left: 0;
+        grid-template-columns: 1fr;
+        padding: var(--spacing-md);
         text-align: left;
-        padding: var(--spacing-md) var(--spacing-sm) var(--spacing-md) calc(var(--timeline-axis) + var(--spacing-lg));
     }
-    .timeline-item::before {
-        left: calc(var(--timeline-axis) + 1px);
-        top: var(--spacing-sm);
-        transform: translate(-50%, -50%);
+    .timeline-date {
+        order: -1;
+        margin-bottom: var(--spacing-xs);
+    }
+    .timeline-meta {
+        justify-content: flex-start;
     }
     .project-hero-image {
         min-height: 300px;
