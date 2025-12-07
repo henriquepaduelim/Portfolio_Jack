@@ -880,7 +880,7 @@ main {
 }
 .short-about-section .about-text .button {
     margin-top: auto;
-    align-self: flex-start;
+    align-self: center;
 }
 .skills-grid {
     display: grid;
